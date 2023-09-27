@@ -14,33 +14,30 @@ const funcionesCalculadas = [];
 //Objeto que guarda las raices calculadas
 class Funcion {
     constructor (a,b,c,tipo, raiz1, raiz2) {
-        this.a = 
-        this.b =
-        this.c =
-        this.tipo =
-        this.raiz1 =
-        this.raiz2 =
-    }
-    calcular () {
-        this.raiz1 = a+b...;
-
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.tipo = tipo;
+        this.raiz1 = raiz1;
+        this.raiz2 = raiz2;
     }
 }
+
 //Calculos precargados.
-funcionesCalculadas.push(new Funcion (1,2,3,"Imaginaria",1,2);)  
-const Funcion = new Funcion ("Imaginaria",1,2);
+//funcionesCalculadas.push(new Funcion (1,2,3,"Imaginaria",1,2);  
+const Funcion = new Funcion (1,2,3,"Real",1,2);
+const Funcion = new Funcion (1,2,3,"RealDoble",1,2);
+const Funcion = new Funcion (1,2,3,"Imaginaria",1,2);
+
 //Programa principal.
-let salir = false;
-while not(salir) {
+let salir = true;
+while (salir) {    
     let opcion = prompt ("¿Que accion desea realizar?")
     //Menu
     switch (opcion) {
         //1:Calcular nueva raiz.
-        //2: Display historial.
-        //3: Borrar 1 item del historial.
         //:BOrrar solo los Reales?????s
         //Borrar imaginaros??????
-        //4: Salir.
         case 1:
             alert("Calculadora de raices de un polinomio de 2do grado de la forma ax^2 +/- bx +/- c");
             let a = validarNumero("a");
@@ -83,19 +80,37 @@ while not(salir) {
             // isNAN(valor) devuelve true si valor es no numerico
             //isNaN() - if the value is a number, false is returned.
             //The Math.sqrt() static method returns the square root of a number. 
-
-            
-
-
             break;
+            
+        //2: Display historial.
         case 2:
-            
+            //Recorro el array haciendo display en cada subindice.
+            for (let index = 0; index < funcionesCalculadas.length; index++) {
+                console.log(funcion)     
+            }
+            funcionesCalculadas.forEach(Funcion => {
+                console.log(funcion)
+            });
+            for (const funcion of funcionesCalculadas) {
+                console.log(funcion.a);
+                console.log(funcion.b);
+                console.log(funcion.c);
+                console.log(funcion.tipo);
+                console.log(funcion.raiz1);
+                console.log(funcion.raiz2);                
+            }
             break;
+            
+        //3: Borrar 1 item del historial.
         case 3:
+            let borrar = prompt ("Seleccione el subindice del item a borrar.")
+
             
             break;
+        
+        //4: Salir. Tal vez en default
         case 4:
-            
+            salir = false
             break;
         default:
             break;
